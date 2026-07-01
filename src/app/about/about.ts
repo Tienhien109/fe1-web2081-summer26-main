@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './about.css'
 })
 export class AboutComponent {
+[x: string]: any;
 
-  name = "Nguyen Van A";
-  age = 25;
+  name = "Nguyễn Tiến Hiền";
+  age = 20;
 
 }
