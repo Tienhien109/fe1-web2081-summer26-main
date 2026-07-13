@@ -1,16 +1,27 @@
 <h2>Đăng ký</h2>
 
-<form [formGroup]="addForm" (ngSubmit)="submitForm()">
+<form>
 
-    <p>Tên đăng nhập</p>
-    <input type="text" formControlName="username">
-<br><br>
-<p>Email</p>
-    <input type="email" formControlName="email">
+  <label>Họ tên</label><br>
+  <input type="text" formControlName="fullname">
 
-    <br><br>
-    <p>Mật khẩu</p>
-    <input type="password" formControlName="password">
-    <br><br>
-        <button>Đăng Ký <button>
-    
+  <br><br>
+
+  <label>Email</label><br>
+  <input type="email" formControlName="email">
+
+  <br><br>
+
+  <label>Mật khẩu</label><br>
+  <input type="password" formControlName="password">
+
+  <br><br>
+
+  <label>Nhập lại mật khẩu</label><br>
+  <input type="password" formControlName="confirm">
+
+  <br><br>
+
+  <button type="submit">Đăng ký</button>
+
+</form>
