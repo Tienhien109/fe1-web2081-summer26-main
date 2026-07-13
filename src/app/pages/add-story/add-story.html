@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="card">
+    <h2>📚 Thêm truyện tranh</h2>
+
+    <form [formGroup]="addForm" (ngSubmit)="submitForm()">
+
+      <div class="form-group">
+        <label>Tên truyện</label>
+        <input
+          type="text"
+          formControlName="title"
+          placeholder="Nhập tên truyện"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Tác giả</label>
+        <input
+          type="text"
+          formControlName="author"
+          placeholder="Nhập tên tác giả"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Lượt xem</label>
+        <input
+          type="number"
+          formControlName="views"
+          placeholder="Nhập lượt xem"
+        />
+      </div>
+
+      <button type="submit">Thêm truyện</button>
+
+    </form>
+  </div>
+</div>
