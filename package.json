@@ -28,6 +28,7 @@
     "@angular/forms": "^20.0.0",
     "@angular/platform-browser": "^20.0.0",
     "@angular/router": "^20.0.0",
+    "bootstrap": "^5.3.8",
     "json-server": "0.17.0",
     "json-server-auth": "^2.1.0",
     "notyf": "^3.10.0",

@@ -1,15 +1,36 @@
-<h1>Lab Angular</h1>
-<nav>
-  <a routerLink="/stories">Stories</a> |
-  <a routerLink="/add-story">Add Story</a>
-</nav>
-<nav>
-  <a routerLink="/about">About</a> |
-  <a routerLink="/contact">Contact</a> |
-  <a routerLink="/products">Products</a> |
-  <a routerLink="/stories">Stories</a>
+<nav class="bg-blue-600 text-white shadow">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="#" class="text-xl font-semibold">
+      <strong>WEB2081 App</strong>
+    </a>
+
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="#" class="hover:text-gray-200">Trang chủ</a>
+      <a href="#" class="hover:text-gray-200">Danh sách</a>
+      <a routerLink="/add-story" class="hover:text-gray-200">Thêm truyện</a>
+      <a routerLink="/contact" class="hover:text-gray-200">Contact</a>
+      <a routerLink="/stories" class="hover:text-gray-200">Stories</a>
+    </div>
+
+    <div class="hidden md:flex items-center space-x-6">
+      <a href="#" class="hover:text-gray-200">Đăng nhập</a>
+      <a href="#" class="hover:text-gray-200">Đăng ký</a>
+    </div>
+  </div>
 </nav>
 
-<hr>
+<div class="max-w-6xl mx-auto mt-10 px-4 text-center">
+  <!-- {{ title }}
+  <br />
+  {{ name }}
+  <br />
+  {{ age }}
 
-<router-outlet></router-outlet>
+  <button
+    (click)="sayHello()"
+    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+  >
+    Button
+  </button> -->
+  <router-outlet></router-outlet>
+</div>

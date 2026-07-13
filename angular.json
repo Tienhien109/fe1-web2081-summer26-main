@@ -79,6 +79,7 @@
               }
             ],
             "styles": ["src/styles.css"]
+            
           }
         }
       }
