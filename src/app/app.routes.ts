@@ -6,6 +6,7 @@ import { AddStory } from './pages/add-story/add-story';
 import { AddProduct } from './pages/add-product/add-product';
 import { Register } from './pages/register/register';
 
+
 export const routes: Routes = [
   {
     path: '',

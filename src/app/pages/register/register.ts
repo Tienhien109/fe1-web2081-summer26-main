@@ -11,28 +11,21 @@ import {
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './register.html',
+  styleUrls: ['./register.css'],
 })
 export class Register {
-addForm: FormGroup;
-constructor(private fb: FormBuilder) {
+  addForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
     this.addForm = this.fb.group({
-      username: ['', Validators.required],
+      fullname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
+      confirm: ['', Validators.required],
     });
   }
 
-submitForm() {
+  submitForm() {
     console.log(this.addForm.value);
   }
-get username() {
-  return this.addForm.get('username');
 }
-get email() {
-  return this.addForm.get('email');
-}
-get password() {
-  return this.addForm.get('password');
-}
-}
-
