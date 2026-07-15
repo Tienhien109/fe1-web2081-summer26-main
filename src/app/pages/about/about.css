@@ -1,0 +1,36 @@
+.about-box{
+    width:700px;
+    margin:40px auto;
+    padding:30px;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.about-box h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.about-box p{
+    font-size:17px;
+    line-height:1.8;
+    color:#444;
+}
+
+.info{
+    margin-top:25px;
+}
+
+.info h3{
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.info ul{
+    padding-left:20px;
+}
+
+.info li{
+    margin:10px 0;
+}

@@ -1,3 +1,22 @@
 {
-  "stories": []
+  "stories": [
+    {
+      "id": 1,
+      "title": "Dragon Ball",
+      "author": "Akira Toriyama",
+      "views": 120000
+    },
+    {
+      "id": 2,
+      "title": "Naruto",
+      "author": "Masashi Kishimoto",
+      "views": 85000
+    },
+    {
+      "id": 3,
+      "title": "One Piece",
+      "author": "Eiichiro Oda",
+      "views": 150000
+    }
+  ]
 }
