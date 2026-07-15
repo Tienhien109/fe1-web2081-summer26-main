@@ -14,11 +14,26 @@ export class Products implements OnInit {
 
   stories: Story[] = [];
 
+  loading = false;
+  error = '';
+
   private storyService = inject(StoryService);
 
   ngOnInit(): void {
-    this.storyService.getStories().subscribe(data => {
-      this.stories = data;
+
+    this.loading = true;
+
+    this.storyService.getStories().subscribe({
+      next: (data) => {
+        this.stories = data;
+        this.loading = false;
+      },
+
+      error: () => {
+        this.error = 'Không tải được dữ liệu!';
+        this.loading = false;
+      }
     });
+
   }
 }

@@ -1,7 +1,17 @@
-<h2>Danh sách sản phẩm</h2>
+<h2>Danh sách truyện</h2>
 
-<ul>
-  <li>Laptop</li>
-  <li>Phone</li>
-  <li>Tablet</li>
-</ul>
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Tên</th>
+    <th>Tác giả</th>
+    <th>Views</th>
+  </tr>
+
+  <tr *ngFor="let story of stories">
+    <td>{{ story.id }}</td>
+    <td>{{ story.title }}</td>
+    <td>{{ story.author }}</td>
+    <td>{{ story.views }}</td>
+  </tr>
+</table>
