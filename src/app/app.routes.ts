@@ -5,7 +5,8 @@ import { Stories } from './pages/stories/stories';
 import { AddStory } from './pages/add-story/add-story';
 import { AddProduct } from './pages/add-product/add-product';
 import { Register } from './pages/register/register';
-
+import { About } from './pages/about/about';
+import { Login } from './pages/login/login';
 
 export const routes: Routes = [
   {
@@ -21,6 +22,10 @@ export const routes: Routes = [
     component: AddStory,
   },
   {
+    path: 'about',
+    component: About,
+  },
+  {
     path: 'contact',
     component: Contact,
   },
@@ -29,11 +34,15 @@ export const routes: Routes = [
     component: Products,
   },
   {
-    path:'add-product',
-    component:AddProduct
-},
-{
-    path:'register',
-    component:Register
-}
+    path: 'add-product',
+    component: AddProduct,
+  },
+  {
+    path: 'login',
+    component: Login,
+  },
+  {
+    path: 'register',
+    component: Register,
+  },
 ];
