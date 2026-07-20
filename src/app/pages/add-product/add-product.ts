@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { ProductService } from "../../services/product.service";
+import { ProductService } from '../../services/product.service';
 import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+
 @Component({
   selector: 'app-add-product',
   standalone: true,
@@ -14,7 +15,14 @@ import {
 })
 export class AddProduct {
   addForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+
+  loading = false;
+  error = '';
+
+  constructor(
+    private fb: FormBuilder,
+    private productService: ProductService
+  ) {
     this.addForm = this.fb.group({
       name: ['', Validators.required],
       price: [0, Validators.required],
@@ -22,7 +30,24 @@ export class AddProduct {
     });
   }
 
-submitForm() {
-    console.log(this.addForm.value);
+  submitForm() {
+    if (this.addForm.invalid) {
+      return;
+    }
+
+    this.loading = true;
+    this.error = '';
+
+    this.productService.addProduct(this.addForm.value).subscribe({
+      next: () => {
+        this.loading = false;
+        alert('Thêm thành công');
+        this.addForm.reset();
+      },
+      error: () => {
+        this.loading = false;
+        this.error = 'Có lỗi xảy ra!';
+      },
+    });
   }
 }
