@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { StoryService } from "../../services/story.service";
 import {
   FormBuilder,
   FormGroup,

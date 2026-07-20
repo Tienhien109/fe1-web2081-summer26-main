@@ -10,9 +10,10 @@ import { Login } from './pages/login/login';
 
 export const routes: Routes = [
   {
-    path: '',
-    component: Stories,
-  },
+  path: '',
+  redirectTo: 'add-product',
+  pathMatch: 'full',
+},
   {
     path: 'stories',
     component: Stories,

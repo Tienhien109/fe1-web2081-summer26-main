@@ -24,8 +24,8 @@ export class Products implements OnInit {
     this.loading = true;
 
     this.storyService.getStories().subscribe({
-      next: (data) => {
-        this.stories = data;
+      next: (data: Story[] | any) => {
+        this.stories = data as Story[];
         this.loading = false;
       },
 
