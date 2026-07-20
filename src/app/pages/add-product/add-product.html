@@ -1,23 +1,30 @@
-<p>add-product works!</p>
 <h2>Thêm sản phẩm</h2>
 
 <form [formGroup]="addForm" (ngSubmit)="submitForm()">
 
-    <p>Tên sản phẩm</p>
-    <input type="text" formControlName="name">
+  <p>Tên sản phẩm</p>
+  <input type="text" formControlName="name">
 
-    <br><br>
+  <br><br>
 
-    <p>Giá</p>
-    <input type="number" formControlName="price">
+  <p>Giá</p>
+  <input type="number" formControlName="price">
 
-    <br><br>
+  <br><br>
 
-    <p>Danh mục</p>
-    <input type="text" formControlName="category">
+  <p>Danh mục</p>
+  <input type="text" formControlName="category">
 
-    <br><br>
+  <br><br>
 
-    <button>Thêm sản phẩm</button>
+  <button type="submit" [disabled]="loading">
+    {{ loading ? "Đang gửi" : "Thêm sản phẩm" }}
+  </button>
+
+  @if(error){
+    <p style="color:red">
+      {{ error }}
+    </p>
+  }
 
 </form>
