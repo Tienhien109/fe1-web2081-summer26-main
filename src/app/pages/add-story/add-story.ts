@@ -1,5 +1,10 @@
 import { Component } from "@angular/core";
-import { FormBuilder, FormGroup, ReactiveFormsModule } from "@angular/forms";
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from "@angular/forms";
 
 @Component({
   selector: "app-add-story",
@@ -12,13 +17,17 @@ export class AddStory {
 
   constructor(private fb: FormBuilder) {
     this.addForm = this.fb.group({
-      title: "",
-      author: "",
-      views: 0,
+      title: ["", Validators.required],
+      author: [""],
+      views: [0],
     });
   }
 
   submitForm() {
+    if (this.addForm.invalid) {
+      return;
+    }
+
     console.log(this.addForm.value);
   }
 }
