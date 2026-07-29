@@ -1,0 +1,39 @@
+<a routerLink="/add">Thêm mới</a>
+
+<table border="1">
+
+<tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Views</th>
+    <th>Action</th>
+</tr>
+
+@for(item of stories; track item.id){
+
+<tr>
+
+<td>{{item.id}}</td>
+
+<td>{{item.title}}</td>
+
+<td>{{item.author}}</td>
+
+<td>{{item.views}}</td>
+
+<td>
+
+<a [routerLink]="['/edit',item.id]">Sửa</a>
+
+<button (click)="delete(item.id)">
+Xóa
+</button>
+
+</td>
+
+</tr>
+
+}
+
+</table>

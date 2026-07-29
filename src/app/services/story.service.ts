@@ -1,19 +1,33 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { inject, Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root'
 })
 export class StoryService {
-  api = "http://localhost:3000/stories";
 
-  constructor(private http: HttpClient) {}
+  http = inject(HttpClient);
+
+  API = "http://localhost:3000/stories";
 
   getStories() {
-    return this.http.get(this.api);
+    return this.http.get<any[]>(this.API);
   }
 
-  addStory(story: any) {
-    return this.http.post(this.api, story);
+  getStory(id: number) {
+    return this.http.get<any>(`${this.API}/${id}`);
   }
+
+  addStory(data: any) {
+    return this.http.post(this.API, data);
+  }
+
+  updateStory(id: number, data: any) {
+    return this.http.put(`${this.API}/${id}`, data);
+  }
+
+  deleteStory(id: number) {
+    return this.http.delete(`${this.API}/${id}`);
+  }
+
 }
