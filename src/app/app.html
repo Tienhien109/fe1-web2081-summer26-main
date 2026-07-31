@@ -6,7 +6,10 @@
     </a>
 
     <div class="hidden md:flex items-center space-x-8">
-      <a routerLink="/" class="hover:text-gray-200">Trang chủ</a>
+
+      <a routerLink="/" class="hover:text-gray-200">
+        Trang chủ
+      </a>
 
       <a routerLink="/stories" class="hover:text-gray-200">
         Danh sách
@@ -27,17 +30,34 @@
       <a routerLink="/stories" class="hover:text-gray-200">
         Stories
       </a>
+
     </div>
 
     <div class="hidden md:flex items-center space-x-6">
 
-      <a routerLink="/login" class="hover:text-gray-200">
-        Đăng nhập
-      </a>
+      @if(!user){
 
-      <a routerLink="/register" class="hover:text-gray-200">
-        Đăng ký
-      </a>
+        <a routerLink="/login" class="hover:text-gray-200">
+          Đăng nhập
+        </a>
+
+        <a routerLink="/register" class="hover:text-gray-200">
+          Đăng ký
+        </a>
+
+      } @else {
+
+        <span class="font-semibold">
+          Xin chào {{ user.fullname }}
+        </span>
+
+        <button
+          (click)="logout()"
+          class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded">
+          Logout
+        </button>
+
+      }
 
     </div>
 
@@ -45,9 +65,19 @@
 </nav>
 
 <div class="max-w-6xl mx-auto mt-10 px-4 text-center">
+
   <h1 class="text-4xl font-bold mb-6">
     Chào mừng đến với WEB2081
   </h1>
 
+  @if(user){
+
+    <p class="text-green-600 font-semibold mb-4">
+      Đã đăng nhập: {{ user.fullname }} ({{ user.email }})
+    </p>
+
+  }
+
   <router-outlet></router-outlet>
+
 </div>
