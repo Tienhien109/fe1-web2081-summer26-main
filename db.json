@@ -18,5 +18,19 @@
       "author": "Eiichiro Oda",
       "views": 150000
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "fullname": "Admin",
+      "email": "admin@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "fullname": "Hiền",
+      "email": "hien@gmail.com",
+      "password": "123456"
+    }
   ]
 }

@@ -2,24 +2,50 @@
   <h2>Đăng nhập</h2>
   <p>Chào mừng bạn quay trở lại!</p>
 
-  <form>
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
 
     <div class="form-group">
-      <label for="email">Email</label>
+      <label>Email</label>
+
       <input
-        id="email"
-        name="email"
         type="email"
+        formControlName="email"
         placeholder="Nhập email">
+
+      <small
+        *ngIf="loginForm.get('email')?.touched &&
+               loginForm.get('email')?.errors?.['required']">
+        Không được để trống Email
+      </small>
+
+      <small
+        *ngIf="loginForm.get('email')?.touched &&
+               loginForm.get('email')?.errors?.['email']">
+        Email không hợp lệ
+      </small>
+
     </div>
 
     <div class="form-group">
-      <label for="password">Mật khẩu</label>
+      <label>Mật khẩu</label>
+
       <input
-        id="password"
-        name="password"
         type="password"
+        formControlName="password"
         placeholder="Nhập mật khẩu">
+
+      <small
+        *ngIf="loginForm.get('password')?.touched &&
+               loginForm.get('password')?.errors?.['required']">
+        Không được để trống Password
+      </small>
+
+      <small
+        *ngIf="loginForm.get('password')?.touched &&
+               loginForm.get('password')?.errors?.['minlength']">
+        Password tối thiểu 6 ký tự
+      </small>
+
     </div>
 
     <button type="submit">
