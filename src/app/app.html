@@ -27,15 +27,15 @@
         Contact
       </a>
 
-      <a routerLink="/stories" class="hover:text-gray-200">
-        Stories
+      <a routerLink="/products" class="hover:text-gray-200">
+        Products
       </a>
 
     </div>
 
     <div class="hidden md:flex items-center space-x-6">
 
-      @if(!user){
+      @if (!user) {
 
         <a routerLink="/login" class="hover:text-gray-200">
           Đăng nhập
@@ -53,7 +53,7 @@
 
         <button
           (click)="logout()"
-          class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded">
+          class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">
           Logout
         </button>
 
@@ -70,7 +70,7 @@
     Chào mừng đến với WEB2081
   </h1>
 
-  @if(user){
+  @if (user) {
 
     <p class="text-green-600 font-semibold mb-4">
       Đã đăng nhập: {{ user.fullname }} ({{ user.email }})

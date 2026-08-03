@@ -25,7 +25,7 @@ export class Login {
     private router: Router
   ) {
     if (localStorage.getItem('token')) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/stories']);
     }
 
     this.loginForm = this.fb.group({
@@ -53,7 +53,7 @@ export class Login {
 
           alert('Đăng nhập thành công');
 
-          this.router.navigate(['/']);
+          this.router.navigate(['/stories']);
         } else {
           alert('Sai email hoặc mật khẩu');
         }
