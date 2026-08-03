@@ -8,19 +8,34 @@ import { Register } from './pages/register/register';
 import { About } from './pages/about/about';
 import { Login } from './pages/login/login';
 
+import { authGuard } from './guards/auth-guard';
+import { guestGuard } from './guards/guest.guard';
+
 export const routes: Routes = [
   {
-  path: '',
-  redirectTo: 'add-product',
-  pathMatch: 'full',
-},
+    path: '',
+    redirectTo: 'stories',
+    pathMatch: 'full',
+  },
   {
     path: 'stories',
     component: Stories,
+    canActivate: [authGuard],
   },
   {
     path: 'add-story',
     component: AddStory,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'products',
+    component: Products,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'add-product',
+    component: AddProduct,
+    canActivate: [authGuard],
   },
   {
     path: 'about',
@@ -31,16 +46,9 @@ export const routes: Routes = [
     component: Contact,
   },
   {
-    path: 'products',
-    component: Products,
-  },
-  {
-    path: 'add-product',
-    component: AddProduct,
-  },
-  {
     path: 'login',
     component: Login,
+    canActivate: [guestGuard],
   },
   {
     path: 'register',
